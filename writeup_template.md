@@ -18,9 +18,9 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-[training_barchart]: ./examples/training_barchart.jpg "Training Data Visualization"
-[validation_barchart]: ./examples/validation_barchart.jpg "Validation Data Visualization"
-[test_barchart]: ./examples/test_barchart.jpg "Training Test Visualization"
+[training_barchart]: ./examples/training_barchart.png "Training Data Visualization"
+[validation_barchart]: ./examples/validation_barchart.png "Validation Data Visualization"
+[test_barchart]: ./examples/test_barchart.png "Training Test Visualization"
 
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
