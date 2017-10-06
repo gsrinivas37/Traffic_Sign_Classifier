@@ -1,11 +1,5 @@
 #**Traffic Sign Recognition** 
 
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
@@ -58,17 +52,17 @@ signs data set:
 
 Here is an exploratory visualization of the data set. 
 
-Below is the bar chart showing the number of samples for each uniquie class in training data.
+Below is the bar chart showing the number of samples for each unique classes in training data.
 
 ![alt text][training_barchart]
 
 
-Below is the bar chart showing the number of samples for each uniquie class in validation data.
+Below is the bar chart showing the number of samples for each unique classes in validation data.
 
 ![alt text][validation_barchart]
 
 
-Below is the bar chart showing the number of samples for each uniquie class in test data.
+Below is the bar chart showing the number of samples for each unique classes in test data.
 
 ![alt text][test_barchart]
 
