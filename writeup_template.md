@@ -2,7 +2,8 @@
 
 ##Writeup Template
 
-###You can use this file as a template for your writeup if you want to submit it as a markdown
+###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+
 ---
 
 **Build a Traffic Sign Recognition Project**
@@ -17,6 +18,9 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
+[training_barchart]: ./examples/training_barchart.jpg "Training Data Visualization"
+[validation_barchart]: ./examples/validation_barchart.jpg "Validation Data Visualization"
+[test_barchart]: ./examples/test_barchart.jpg "Training Test Visualization"
 
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
@@ -47,14 +51,26 @@ signs data set:
 * The size of training set is 34799
 * The size of the validation set is 4410
 * The size of test set is 12630
-* The shape of a traffic sign image is 32x32x3
+* The shape of a traffic sign image is (32,32,3)
 * The number of unique classes/labels in the data set is 43
 
 ####2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. 
 
-![alt text][image1]
+Below is the bar chart showing the number of samples for each uniquie class in training data.
+
+![alt text][training_barchart]
+
+
+Below is the bar chart showing the number of samples for each uniquie class in validation data.
+
+![alt text][validation_barchart]
+
+
+Below is the bar chart showing the number of samples for each uniquie class in test data.
+
+![alt text][test_barchart]
 
 ###Design and Test a Model Architecture
 
