@@ -159,14 +159,19 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					|  Comments        |
 |:---------------------:|:---------------------------------------------:| :-------------------------------------:
-| 60 speed limit      		| 60 speed limit   									|                           |
-| U-turn     			| U-turn 										|                           |
-| Yield					| Yield											|                           |
-| 100 km/h	      		| Bumpy Road					 				|                           |
-| Slippery Road			| Slippery Road      							|                           |
+| 60 speed limit      		| 60 speed limit   									| Sometimes predicted as 50 and 30 speedlimit                          |
+| Stop sign     			| Stop sign 										|       Always predicated reliably                    |
+| Turn right ahead					| Turn right ahead|  Always predicated reliably                         |
+| Pedestrians	      		| Pedestrians					 				| This was pretty difficult to predict. Got it correct only few times.               |
+| Go straight or right			| Go straight or right      							|   Always predicated reliably                        |
+| No vehicles			| No vehicles      							|   Few times it got it wrong                        |
+| Ahead only			| Ahead only      							|   Always predicated reliably                        |
+| No entry			| No entry      							|   Few times it got it wrong                        |
+| 50 speed limit			| 50 speed limit      							|   Sometimes predicted as 60 and 80 speedlimit. The image is tilted a bit so that could be the reason.                        |
+| Yield			| Yield      							|   Few times it got it wrong                        |
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 10 of the 10 traffic signs, which gives an accuracy of 100% but it was not always consistent. I would say it wavered between 70 to 100.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
