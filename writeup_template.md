@@ -91,40 +91,45 @@ My final model consisted of the following layers:
 | Flatten          		| Output 450        									|
 | Fully connected		  | Input 450, Output 150        									|
 | RELU					|												|
-| Dropout					|												|
+| Dropout					|		With keep_prob = 0.5										|
 | Fully connected		  | Input 150, Output 100        									|
 | RELU					|												|
-| Dropout					|												|
+| Dropout					|	With keep_prob = 0.5				|
 | Fully connected		  | Input 100, Output 43        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Softmax				|         									|
 
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, I started with standard LeNet 5 architecture with following characteristics.
+ 1. AdamOptimizer as the optimizer
+ 2. Batch size as 128
+ 3. Number of Epochs as 10.
+ 4. Learning rate as 0.001
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 0.993
+* validation set accuracy of 0.958
+* test set accuracy of 0.932
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+Following are the steps I have taken to achieve my final results.
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+1. First I started with LeNet architecture that was used for MNIST dataset in the previous chapter as I felt it is good starting point for traffic sign recongition task.
+2. I applied the traffic sign data to LeNet architecture as it is just by modifying the input and output size to get initial learning rate. I found the learning rate to be ~86 which was pretty good start.
+3. I have done data pre-processing by converting the input images to grayscale and also normalizing the input by using the foruma pixel = (pixel-128)/128. This steps gave me pretty good results and my learning rate improved beyong 90%
+4. Then I tried playing around with increasing epoch size, reducing learning rate and also increasing the network size without modifying the architecture much. I was stuck in this step for quite sometime and my learning rate didn't go beyond 92.
+5. I went to the forums and read what are the things other people are trying and I found link to below paper. I glanced through the paper and took some inputs from it. 
+ http://people.idsia.ch/~juergen/nn2012traffic.pdf
+6. Specifically I changed the following three things.
+    a. Changed size of first convolution from 5x5 to 7x7
+    b. Changed size of second convolution from 5x5 to 4x4
+    c. Added dropout after each Fully connected layer. (I felt this made huge impact. I think it was probably because lot of images in the input are not very clear so dropping out some of neurons in the networks helped it to ignore them and learn better)
+7. The above changes significantly improved my learning rate and I could go beyond 94.
+8. I also tuned the depth of different layers to get optimal learning rate. I found that generally increasing the depth of layers increased my learning rate. But I stuck with some optimal values so as not to increase them too much for little gain. 
+9. I found help from the forums to plot the training and validation loss on graph to monitor how my network is learning. I found that useful to tune my learning rate and number of epochs.
+10. Finally I reached a point where I was able to get accuracy beyond 95 and I was satisfied.
 
 ###Test a Model on New Images
 
