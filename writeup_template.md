@@ -16,6 +16,17 @@ The goals / steps of this project are the following:
 [validation_barchart]: ./examples/validation_barchart.png "Validation Data Visualization"
 [test_barchart]: ./examples/test_barchart.png "Training Test Visualization"
 
+[img1]: ./traffic_signs/1.jpg "Traffic Sign 1"
+[img2]: ./traffic_signs/2.jpg "Traffic Sign 2"
+[img3]: ./traffic_signs/3.jpg "Traffic Sign 3"
+[img4]: ./traffic_signs/4.jpg "Traffic Sign 4"
+[img5]: ./traffic_signs/5.jpg "Traffic Sign 5"
+[img6]: ./traffic_signs/6.jpg "Traffic Sign 6"
+[img7]: ./traffic_signs/7.jpg "Traffic Sign 7"
+[img8]: ./traffic_signs/8.jpg "Traffic Sign 8"
+[img9]: ./traffic_signs/9.jpg "Traffic Sign 9"
+[img10]: ./traffic_signs/10.jpg "Traffic Sign 10"
+
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
@@ -135,24 +146,24 @@ Following are the steps I have taken to achieve my final results.
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are ten German traffic signs that I found on the web. I cropped and resized them to size 32x32 pixel before I imported them into the code.
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][img1] ![alt text][img2] ![alt text][img3]  ![alt text][img4]  ![alt text][img5]  
+![alt text][img6] ![alt text][img7] ![alt text][img8]  ![alt text][img9]  ![alt text][img10]
 
-The first image might be difficult to classify because ...
+I found that network was consistently correct with high probability for most of the images but it has difficulty in predicting 3 or 4 of them and got them wrong sometimes. When I ran the network again, it was able to predict again correct. I found it surprising that it got confused with speed limit signs and was predicting 50 as 60 and sometimes 60 as 30 even though personally I could distinguish them clearly. Later when I looked at the training images, I noticed that training images for speed limit 60 were not very clear. So I thought because of that, it didn't learn that sign properly. In the below section, I added comments for each sign about my observations.
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Image			        |     Prediction	        					|  Comments        |
+|:---------------------:|:---------------------------------------------:| :-------------------------------------:
+| 60 speed limit      		| 60 speed limit   									|                           |
+| U-turn     			| U-turn 										|                           |
+| Yield					| Yield											|                           |
+| 100 km/h	      		| Bumpy Road					 				|                           |
+| Slippery Road			| Slippery Road      							|                           |
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
